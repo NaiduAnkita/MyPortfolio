@@ -146,3 +146,27 @@ body {
 .timeline-item:hover {
   border-color: #22d3ee;
 }
+
+/* Added for responsiveness */
+@media (max-width: 767px) {
+    .timeline::before {
+        left: 20px;
+    }
+    .timeline .right-timeline, .timeline .left-timeline {
+        justify-content: start;
+        flex-direction: row;
+        width: 100%;
+    }
+    .timeline .right-timeline .w-5\/12:first-child, .timeline .left-timeline .w-5\/12:first-child {
+        display: none;
+    }
+    .timeline .right-timeline .timeline-item, .timeline .left-timeline .timeline-item {
+        width: calc(100% - 60px);
+    }
+    .timeline .right-timeline .z-20, .timeline .left-timeline .z-20 {
+        margin-left: -5px;
+    }
+    .timeline .left-timeline {
+        flex-direction: row-reverse;
+    }
+}
