@@ -147,38 +147,38 @@ body {
   border-color: #22d3ee;
 }
 
-/* Responsive styles for mobile */
+/* --- RESPONSIVE STYLES FOR MOBILE --- */
 @media (max-width: 767px) {
-    /* Hide the timeline line and dots on mobile */
+    /* Hide the central timeline bar and the dots */
     .timeline::before,
     .timeline-dot {
         display: none;
     }
 
-    /* Adjust the main timeline containers */
-    .right-timeline,
-    .left-timeline {
+    /* Process each timeline entry */
+    .timeline .right-timeline,
+    .timeline .left-timeline {
         display: flex;
         flex-direction: column;
+        justify-content: flex-start;
         width: 100%;
-        margin-bottom: 2rem; /* Add space between items */
-    }
-
-    /* Make the content card take up the full width */
-    .right-timeline .timeline-item,
-    .left-timeline .timeline-item {
-        width: 100%;
-        transform: none !important; /* Reset any desktop animations */
+        margin-bottom: 2rem; /* Add spacing between cards */
     }
 
     /* Hide the empty spacer div used on desktop */
-    .right-timeline .w-5\/12:first-child,
-    .left-timeline .w-5\/12:first-child {
+    .timeline .w-5\/12:first-child {
         display: none;
     }
 
-    /* Reset the flexbox order for all items */
-    .order-1 {
-        order: 0;
+    /* Make the content card take the full width */
+    .timeline .timeline-item {
+        width: 100%;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+
+    /* Hide the icon container inside the card */
+    .timeline-item .flex.items-start > div:first-child {
+        display: none;
     }
 }
