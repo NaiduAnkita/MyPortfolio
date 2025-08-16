@@ -147,7 +147,12 @@ body {
   border-color: #22d3ee;
 }
 
-/* --- RESPONSIVE STYLES FOR MOBILE --- */
+/* HIDE ICONS IN INTERNSHIPS SECTION (ALL VIEWS) */
+#internships .timeline-item .flex.items-start > div:first-child {
+    display: none;
+}
+
+/* RESPONSIVE STYLES FOR MOBILE */
 @media (max-width: 767px) {
     /* Hide the central timeline bar and the dots */
     .timeline::before,
@@ -175,10 +180,5 @@ body {
         width: 100%;
         transform: none !important;
         opacity: 1 !important;
-    }
-
-    /* Hide the icon container inside the card */
-    .timeline-item .flex.items-start > div:first-child {
-        display: none;
     }
 }
