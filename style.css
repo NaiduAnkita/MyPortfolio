@@ -1,0 +1,148 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #0f172a; /* slate-900 */
+  color: #cbd5e1; /* slate-300 */
+}
+.glass-card {
+  background: rgba(30, 41, 59, 0.5); /* slate-800 with opacity */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(51, 65, 85, 0.5); /* slate-700 with opacity */
+}
+.section-title {
+  background: linear-gradient(to right, #22d3ee, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #334155; /* slate-700 */
+}
+.timeline-item {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+  border: 1px solid transparent;
+}
+.right-timeline .timeline-item {
+  transform: translateX(20px);
+}
+.timeline-item.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.timeline-dot {
+  transition:
+    transform 0.3s ease-out,
+    background-color 0.3s ease-out;
+}
+.timeline-dot.active {
+  transform: scale(1.5);
+  background-color: #22d3ee;
+}
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+  transition-delay: 0.2s;
+}
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.cert-card {
+  background-color: #1e293b; /* slate-800 */
+  border: 1px solid #334155; /* slate-700 */
+  transition: border-color 0.3s ease;
+}
+.cert-card:hover {
+  border-color: #22d3ee; /* cyan-400 */
+}
+.view-cert-bar {
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+}
+.cert-card:hover .view-cert-bar {
+  transform: translateY(0);
+}
+.custom-bullet-list li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
+  align-items: start;
+}
+.custom-bullet-list li::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #22d3ee;
+  margin-top: 0.45em;
+}
+.project-cyan-bullet li::before {
+  background-color: #67e8f9;
+}
+.project-indigo-bullet li::before {
+  background-color: #a5b4fc;
+}
+.project-emerald-bullet li::before {
+  background-color: #6ee7b7;
+}
+.project-sky-bullet li::before {
+  background-color: #7dd3fc;
+}
+
+.hackerrank-bullet-list li::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #ffb800; /* Match HackerRank logo color */
+  margin-top: 0.45em;
+}
+#projects .grid {
+  perspective: 1000px;
+}
+.project-card {
+  opacity: 0;
+  transform: rotateY(-20deg) scale(0.95);
+  transform-origin: left center;
+  transition:
+    opacity 600ms ease-out,
+    transform 600ms ease-out;
+}
+.project-card.is-visible {
+  opacity: 1;
+  transform: rotateY(0) scale(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-card {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+#experience,
+#education {
+  position: relative;
+  z-index: 10;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(14, 116, 144, 0.15) 0%,
+    rgba(14, 116, 144, 0) 70%
+  );
+}
+.timeline-item:hover {
+  border-color: #22d3ee;
+}
