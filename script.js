@@ -256,3 +256,15 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+// Back to Top Button Logic
+const backToTopButton = document.getElementById('back-to-top-button');
+
+window.addEventListener('scroll', () => {
+    // Show the button after scrolling down 300px
+    if (window.scrollY > 300) {
+        backToTopButton.classList.add('show');
+    } else {
+        backToTopButton.classList.remove('show');
+    }
+});

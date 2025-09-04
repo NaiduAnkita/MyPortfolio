@@ -182,3 +182,33 @@ body {
         opacity: 1 !important;
     }
 }
+/* Back to Top Button */
+#back-to-top-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #0891b2; /* A slightly darker cyan */
+    color: #ffffff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, background-color 0.3s;
+}
+
+#back-to-top-button:hover {
+    background-color: #06b6d4; /* cyan-500 */
+}
+
+#back-to-top-button.show {
+    opacity: 1;
+    visibility: visible;
+}
