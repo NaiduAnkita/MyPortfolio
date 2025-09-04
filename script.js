@@ -257,14 +257,30 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Back to Top Button Logic
+// script.js (inside the DOMContentLoaded listener)
+
+// --- Back to Top Button (Final Attempt) ---
 const backToTopButton = document.getElementById('back-to-top-button');
 
-window.addEventListener('scroll', () => {
-    // Show the button after scrolling down 300px
-    if (window.scrollY > 300) {
-        backToTopButton.classList.add('show');
-    } else {
-        backToTopButton.classList.remove('show');
-    }
-});
+if (backToTopButton) {
+    // Listen for scroll events on the window
+    window.addEventListener('scroll', function() {
+        // If user has scrolled down more than 300px
+        if (window.scrollY > 300) {
+            // Directly set the display style to make it visible
+            backToTopButton.style.display = 'flex';
+        } else {
+            // Otherwise, hide it
+            backToTopButton.style.display = 'none';
+        }
+    });
+
+    // Add click event for smooth scrolling
+    backToTopButton.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default link behavior
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
